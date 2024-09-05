@@ -1,5 +1,12 @@
 1. React.js Basics (To-Do List)
 
+How to test: 
+    
+    - Navigate to the project’s frontend directory: cd frontend
+    - Install dependencies: npm install
+    - Start the frontend server: npm run dev
+
+
 File: /frontend/components/Todo_List.js
 
 Objective:
@@ -22,6 +29,12 @@ Key Considerations:
     - Making sure empty tasks don’t get added by checking the input value.
 
 2. Next.js Routing
+
+How to test: 
+
+    - Navigate to the project’s frontend directory: cd frontend
+    - Start the frontend server: npm run dev
+    - Press "Go to Second Page" on the first page and "Go to First Page" on the second page
 
 Files: /frontend/pages/index.js, /frontend/pages/about.js
 
@@ -46,7 +59,13 @@ Key Considerations:
      - Making sure the about.js page fetches data efficiently using the useEffect hook.
 
 3. API Integration
-    File: /frontend/pages/about.js
+
+How to Test:
+    
+    - On the "secondPage" page, the app should fetch data from the mock API and display a list of posts in the middle.
+
+
+File: /frontend/pages/about.js
 
 Objective:
 
@@ -70,6 +89,14 @@ Key Considerations:
     - Dynamically displaying the data after it's fetched.
 
 4. Node.js Server Setup
+
+How to test:
+    - Navigate to the backend directory: cd backend
+    - Install dependencies: npm install
+    - Start the backend server: npm run start
+    - If you have problems with the port already used just change "const SERVER_PORT = 3003;" in "server.js"
+    - GET http://localhost:3003/api in postman
+    - It should return a JSON response: { "message": "Test Number 4 Node.js Server" }
 
 File: /backend/server.js
 
@@ -95,6 +122,9 @@ Key Considerations:
 
 5. Middleware (Request Logger)
 
+How to test:
+    - No need to test the middleware is already set up as part of the backend server.
+
 File: /backend/middleware/requestLogger.js
 
 Objective:
@@ -118,6 +148,33 @@ Key Considerations:
     - Capturing useful information like timestamps and headers for debugging.
 
 6. Database Interaction (CRUD Operations)
+
+How to test:
+    - Make sure PostgreSQL is running and you’ve set up your .env file with the correct database credentials a blueprint is below.
+    DB_USER=username
+    DB_PASSWORD=password
+    DB_NAME=database_name
+    DB_HOST=localhost
+    DB_PORT=5432
+    - Run the following command to create the database tables: npm run db:init
+    - Create a user:
+    POST http://localhost:3003/users
+    {
+        "fullName": "Joe",
+        "userEmail": "joe@gmail.com",
+        "userPassword": "mustafarush71"
+    }
+    - Fetch all users: GET http://localhost:3003/users
+    - Fetch a user by ID: GET http://localhost:3003/users/1
+    - Update a user: 
+    PUT http://localhost:3003/users/1
+    {
+        "fullName": "Jane",
+        "userEmail": "jane@gmail.com",
+        "userPassword": "newpass731"
+    }
+    - Delete a user: DELETE http://localhost:3003/users/1
+
 
 Files: /backend/models/userModel.js, /backend/models/postModel.js
 
@@ -143,7 +200,12 @@ Key Considerations:
     - Handling errors properly when interacting with the database.
 
 7. Database Schema Design
-    Files: /backend/models/userModel.js, /backend/models/postModel.js
+
+How to test: 
+    - The database schema is automatically set up by running: "npm run db:init"
+
+
+Files: /backend/models/userModel.js, /backend/models/postModel.js
 
 Objective:
     - Design a database schema that defines relationships between users, posts, and comments.
@@ -165,6 +227,10 @@ Key Considerations:
     - Optimizing queries by adding indexed fields to improve performance.
 
 8. SQL Queries
+
+How to Test:
+    - Get posts by user: GET http://localhost:3003/posts/user/1
+    - Count comments on a post: GET http://localhost:3003/posts/1/comments/count
 
 Files: /backend/models/postModel.js, /backend/models/userModel.js
 
