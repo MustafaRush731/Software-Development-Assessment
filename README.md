@@ -1,4 +1,4 @@
-1. React.js Basics (To-Do List)
+Task 1. React.js Basics (To-Do List)
 
 How to test: 
     
@@ -28,7 +28,7 @@ Key Considerations:
     - Keeping the state updated when new tasks are added.
     - Making sure empty tasks don’t get added by checking the input value.
 
-2. Next.js Routing
+Task 2. Next.js Routing
 
 How to test: 
 
@@ -58,7 +58,7 @@ Key Considerations:
      - Ensuring navigation between pages is quick and seamless.
      - Making sure the about.js page fetches data efficiently using the useEffect hook.
 
-3. API Integration
+Task 3. API Integration
 
 How to Test:
     
@@ -88,7 +88,7 @@ Key Considerations:
     - Ensuring the API call runs only once when the component mounts.
     - Dynamically displaying the data after it's fetched.
 
-4. Node.js Server Setup
+Task 4. Node.js Server Setup
 
 How to test:
     - Navigate to the backend directory: cd backend
@@ -120,7 +120,7 @@ Key Considerations:
     - Keeping the routes organized by splitting them into separate files.
     - Setting up global middleware to log all incoming requests.
 
-5. Middleware (Request Logger)
+Task 5. Middleware (Request Logger)
 
 How to test:
     - No need to test the middleware is already set up as part of the backend server.
@@ -147,7 +147,7 @@ Key Considerations:
     - Making sure the middleware doesn’t interfere with how the server handles requests.
     - Capturing useful information like timestamps and headers for debugging.
 
-6. Database Interaction (CRUD Operations)
+Task 6. Database Interaction (CRUD Operations)
 
 How to test:
     - Make sure PostgreSQL is running and you’ve set up your .env file with the correct database credentials a blueprint is below.
@@ -199,7 +199,7 @@ Key Considerations:
     - Ensuring that foreign keys link users and posts correctly for data integrity.
     - Handling errors properly when interacting with the database.
 
-7. Database Schema Design
+Task 7. Database Schema Design
 
 How to test: 
     - The database schema is automatically set up by running: "npm run db:init"
@@ -226,7 +226,7 @@ Key Considerations:
     - Making sure foreign keys properly link users to posts and comments.
     - Optimizing queries by adding indexed fields to improve performance.
 
-8. SQL Queries
+Task 8. SQL Queries
 
 How to Test:
     - Get posts by user: GET http://localhost:3003/posts/user/1
